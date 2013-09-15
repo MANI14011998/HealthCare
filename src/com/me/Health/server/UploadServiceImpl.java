@@ -12,7 +12,7 @@ import com.google.appengine.api.blobstore.BlobstoreService;
 import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
-import com.me.Health.shared.PatienceInfo;
+import com.me.Health.shared.PatientInfo;
 
 //The FormPanel must submit to a servlet that extends HttpServlet  
 //RemoteServiceServlet cannot be used
@@ -37,7 +37,7 @@ public class UploadServiceImpl extends HttpServlet {
     BlobKey supportingDocBlobKey = blobs.get("supportingDoc");
 
     //Get the paramters from the request to populate the Picture object
-    PatienceInfo patienceInfo = new PatienceInfo();
+    PatientInfo patienceInfo = new PatientInfo();
     //Map the ImageURL to the blobservice servlet, which will serve the image
     patienceInfo.setProfileImageUrl("/health/healthservice?blob-key=" + profileBlobKey.getKeyString());
 

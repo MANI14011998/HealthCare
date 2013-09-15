@@ -14,7 +14,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
 import com.me.Health.client.HealthService;
-import com.me.Health.shared.PatienceInfo;
+import com.me.Health.shared.PatientInfo;
 
 @SuppressWarnings("serial")
 public class HealthServiceImpl extends RemoteServiceServlet implements
@@ -25,9 +25,9 @@ public class HealthServiceImpl extends RemoteServiceServlet implements
       .getBlobstoreService();
   Objectify ofy = ObjectifyService.begin();
   
-  //Register the Objectify Service for the Picture entity
+  //Register the Objectify Service for the PatienceInfo entity
   static {
-    ObjectifyService.register(PatienceInfo.class);
+    ObjectifyService.register(PatientInfo.class);
   }
 
   //Generate a Blobstore Upload URL from the GAE BlobstoreService
@@ -42,10 +42,10 @@ public class HealthServiceImpl extends RemoteServiceServlet implements
 
   //Retrieve the Blob's meta-data from the Datastore using Objectify
   @Override
-  public PatienceInfo getPicture(String id) {
+  public PatientInfo getPicture(String id) {
     
     long l = Long.parseLong(id);
-    PatienceInfo picture = ofy.get(PatienceInfo.class, l);
+    PatientInfo picture = ofy.get(PatientInfo.class, l);
     return picture;
   }
   

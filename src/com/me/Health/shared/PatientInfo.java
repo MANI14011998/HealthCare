@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Id;
 
 @SuppressWarnings("serial")
-public class PatienceInfo implements Serializable {
+public class PatientInfo implements Serializable {
 
 	@Id
 	public Long id;

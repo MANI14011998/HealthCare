@@ -17,7 +17,7 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.me.Health.shared.PatienceInfo;
+import com.me.Health.shared.PatientInfo;
 
 
 public class Health implements EntryPoint {
@@ -65,7 +65,7 @@ public class Health implements EntryPoint {
 	@Override
 	public void onModuleLoad() {
 		loadImage();
-		RootPanel.get("container").add(new HTML("<H1>Patience details</H1>"));
+		RootPanel.get("container").add(new HTML("<H1>Add Patient</H1>"));
 		adduserHorizontalPanel.add(addUserTable);
 		adduserHorizontalPanel.add(UploadProfilePicPanel);
 		mainVerticalPanel.add(adduserHorizontalPanel);
@@ -91,7 +91,6 @@ public class Health implements EntryPoint {
 		addUserTable.setWidget(9, 0, xrayLabel);
 		addUserTable.setWidget(9, 1, uploadSupportingDoc);
 		addUserTable.setWidget(9, 2, submitDocButton);
-		addUserTable.setHeight("50px");
 		mainVerticalPanel.setSpacing(5);
 		uploadForm.setWidget(mainVerticalPanel);
 		
@@ -130,7 +129,6 @@ public class Health implements EntryPoint {
 				    caught.printStackTrace();
 				  }
 			});
-		
 		}
 		});
 		
@@ -145,7 +143,6 @@ public class Health implements EntryPoint {
 			    getPicture(event.getResults().trim());
 			    image.setVisible(false);
 			  }
-			
 		});
 	}
 
@@ -159,15 +156,15 @@ public class Health implements EntryPoint {
 
 	public void getPicture(String id) {
 		//Make another call to the Blob Service to retrieve the meta-data
-		healthService.getPicture(id, new AsyncCallback<PatienceInfo>() {
+		healthService.getPicture(id, new AsyncCallback<PatientInfo>() {
 		
 			@Override
-			public void onSuccess(PatienceInfo result) {
-			Image image = new Image();
-			image.setUrl(result.getProfileImageUrl());
-			UploadProfilePicPanel.add(image);
-			//Use Getters from the Picture object to load the FlexTable
-			addUserTable.setWidget(1, 3, UploadProfilePicPanel);
+			public void onSuccess(PatientInfo result) {
+				Image image = new Image();
+				image.setUrl(result.getProfileImageUrl());
+				UploadProfilePicPanel.add(image);
+				//Use Getters from the Picture object to load the FlexTable
+				addUserTable.setWidget(1, 3, UploadProfilePicPanel);
 			}
 			
 			@Override
