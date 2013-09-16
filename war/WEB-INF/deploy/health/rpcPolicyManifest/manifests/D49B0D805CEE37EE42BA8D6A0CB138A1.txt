@@ -1,2 +1,0 @@
-serviceClass: com.me.Health.client.HealthService
-path: 364D2813D2CDE9E83CE0134F4E5C40D1.gwt.rpc
