@@ -8,12 +8,12 @@
  <!-- Servlets -->
    <servlet>
     <servlet-name>healthServlet</servlet-name>
-    <servlet-class>com.me.Health.server.HealthServiceImpl</servlet-class>
-  </servlet>
+    <servlet-class>com.me.health.gwt.server.HealthServiceImpl</servlet-class>
+  </servlet>	
 
   <servlet>
     <servlet-name>uploadServlet</servlet-name>
-    <servlet-class>com.me.Health.server.UploadServiceImpl</servlet-class>
+    <servlet-class>com.me.health.gwt.server.UploadServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -25,7 +25,41 @@
     <servlet-name>uploadServlet</servlet-name>
     <url-pattern>/health/uploadservice</url-pattern>
   </servlet-mapping>
-  
+
+	<servlet>
+        <servlet-name>ErrorHandler</servlet-name>
+        <servlet-class>com.me.health.server.ErrorHandler</servlet-class>
+	</servlet>
+	<!-- servlet mappings -->
+	<servlet-mapping>
+        <servlet-name>ErrorHandler</servlet-name>
+        <url-pattern>/ErrorHandler</url-pattern>
+	</servlet-mapping>
+	<error-page>
+	    <error-code>404</error-code>
+	    <location>/ErrorHandler</location>
+	</error-page>
+	<error-page>
+	    <error-code>500</error-code>
+	    <location>/ErrorHandler</location>
+	</error-page>
+	<error-page>
+	    <exception-type>java.lang.Throwable</exception-type >
+	    <location>/ErrorHandler</location>
+	</error-page>
+
+	<filter>
+        <filter-name>log</filter-name>
+        <filter-class>com.me.health.server.LogFilterImpl</filter-class>
+        <init-param>
+            <param-name>logType</param-name>
+            <param-value>filterLogParam</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>log</filter-name>
+        <url-pattern>*/</url-pattern>
+    </filter-mapping>
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Health.html</welcome-file>

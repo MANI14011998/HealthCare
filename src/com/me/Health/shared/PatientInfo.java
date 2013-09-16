@@ -1,4 +1,4 @@
-package com.me.Health.shared;
+package com.me.health.shared;
 
 import java.io.Serializable;
 

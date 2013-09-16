@@ -20,7 +20,7 @@
   <!-- Other module inherits                                      -->
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='com.me.Health.client.Health'/>
+  <entry-point class='com.me.health.client.Health'/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>

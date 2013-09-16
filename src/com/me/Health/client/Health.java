@@ -1,4 +1,4 @@
-package com.me.Health.client;
+package com.me.health.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -15,9 +15,10 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.me.Health.shared.PatientInfo;
+import com.me.health.shared.PatientInfo;
 
 
 public class Health implements EntryPoint {
@@ -44,13 +45,13 @@ public class Health implements EntryPoint {
 	HTML xrayLabel = new HTML("<b> Xray or other Document upload :</b>");
 	 
 	TextBox nameTextBox = new TextBox();
-	TextBox descriptionTextBox = new TextBox();
-	TextBox addressTextBox = new TextBox();
+	TextArea descriptionTextBox = new TextArea();
+	TextArea addressTextBox = new TextArea();
 	TextBox mobileNumberTextBox = new TextBox();
 	TextBox ageTextBox = new TextBox();
 	TextBox emailIdTextBox = new TextBox();
-	TextBox diagnosisSpecifiedTextBox = new TextBox();
-	TextBox helpNeedTextBox = new TextBox();
+	TextArea diagnosisSpecifiedTextBox = new TextArea();
+	TextArea helpNeedTextBox = new TextArea();
 	  
 	FileUpload uploadProfile = new FileUpload();
 	Button submitProfileButton = new Button("Submit");
