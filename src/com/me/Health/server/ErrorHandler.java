@@ -51,7 +51,7 @@ public class ErrorHandler extends HttpServlet {
 	      if (throwable == null && statusCode == null){
 	         out.println("<h2>Error information is missing</h2>");
 	         out.println("Please return to the <a href=\"" + 
-	           response.encodeURL("http://localhost:8080/") + 
+	           response.encodeURL("http://my-health-care.appspot.com/") + 
 	           "\">Home Page</a>.");
 	      }else if (statusCode != null){
 	         out.println("The status code : " + statusCode);
