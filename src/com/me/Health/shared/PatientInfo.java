@@ -15,7 +15,7 @@ public class PatientInfo implements Serializable {
 	public String description;
 	public String mobileNumber;
 	public int age;
-	public int emailId;
+	public String emailId;
 	public String address;
 	public String helpNeed;
 	public String xrayOrDocumentToSupport;
@@ -44,11 +44,11 @@ public class PatientInfo implements Serializable {
 		this.address = address;
 	}
 
-	public int getEmailId() {
+	public String getEmailId() {
 		return emailId;
 	}
 
-	public void setEmailId(int emailId) {
+	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
 

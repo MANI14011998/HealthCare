@@ -34,14 +34,11 @@ public class UploadServiceImpl extends HttpServlet {
 
     Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(req);
     BlobKey profileBlobKey = blobs.get("uploadProfilePic");
-    BlobKey supportingDocBlobKey = blobs.get("supportingDoc");
-
     //Get the paramters from the request to populate the Picture object
     PatientInfo patienceInfo = new PatientInfo();
     //Map the ImageURL to the blobservice servlet, which will serve the image
     patienceInfo.setProfileImageUrl("/health/healthservice?blob-key=" + profileBlobKey.getKeyString());
 
-    patienceInfo.setXrayOrDocumentToSupport("/health/healthservice?blob-key=" + profileBlobKey.getKeyString());
     ofy.put(patienceInfo);
 
     //Redirect recursively to this servlet (calls doGet)

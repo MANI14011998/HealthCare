@@ -36,6 +36,7 @@ public class HealthServiceImpl extends RemoteServiceServlet implements
 
     //Map the UploadURL to the uploadservice which will be called by
     //submitting the FormPanel
+
     return blobstoreService
         .createUploadUrl("/health/uploadservice");
   }
@@ -45,8 +46,8 @@ public class HealthServiceImpl extends RemoteServiceServlet implements
   public PatientInfo getPicture(String id) {
     
     long l = Long.parseLong(id);
-    PatientInfo picture = ofy.get(PatientInfo.class, l);
-    return picture;
+    PatientInfo patientInfo = ofy.get(PatientInfo.class, l);
+    return patientInfo;
   }
   
   //Override doGet to serve blobs.  This will be called automatically by the Image Widget
@@ -59,4 +60,10 @@ public class HealthServiceImpl extends RemoteServiceServlet implements
         blobstoreService.serve(blobKey, resp);
 
   }
+
+	@Override
+	public PatientInfo storePatienceInfo(PatientInfo patientInfo) {
+		ofy.put(patientInfo);
+		return patientInfo;
+	}
 }
