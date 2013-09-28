@@ -8,12 +8,12 @@
  <!-- Servlets -->
    <servlet>
     <servlet-name>healthServlet</servlet-name>
-    <servlet-class>com.me.health.gwt.server.HealthServiceImpl</servlet-class>
+    <servlet-class>com.health.server.HealthServiceImpl</servlet-class>
   </servlet>	
 
   <servlet>
     <servlet-name>uploadServlet</servlet-name>
-    <servlet-class>com.me.health.gwt.server.UploadServiceImpl</servlet-class>
+    <servlet-class>com.health.server.UploadServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -28,7 +28,7 @@
 
 	<servlet>
         <servlet-name>ErrorHandler</servlet-name>
-        <servlet-class>com.me.health.server.ErrorHandler</servlet-class>
+        <servlet-class>com.health.common.server.ErrorHandler</servlet-class>
 	</servlet>
 	<!-- servlet mappings -->
 	<servlet-mapping>
@@ -50,7 +50,7 @@
 
 	<filter>
         <filter-name>log</filter-name>
-        <filter-class>com.me.health.server.LogFilterImpl</filter-class>
+        <filter-class>com.health.common.server.LogFilterImpl</filter-class>
         <init-param>
             <param-name>logType</param-name>
             <param-value>filterLogParam</param-value>

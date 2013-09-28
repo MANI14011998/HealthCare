@@ -1,3 +1,3 @@
 # Module health
 # RPC service class, partial path of RPC policy file
-com.me.health.client.HealthService, 1797C9474194EE1D9485C776CE00697C.gwt.rpc
+com.health.client.HealthService, 35992C38AC0F373E0FFC10C7A9EB94C8.gwt.rpc
