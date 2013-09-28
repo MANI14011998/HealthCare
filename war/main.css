@@ -33,7 +33,9 @@ h1 {
   margin: 15px 6px 6px;
 }
 
+
 .FlexTable {
+  table-layout: fixed;
   border-top: thin solid #444444;
   border-left: thin solid #444444;
   border-right: thin solid #111111;
@@ -59,8 +61,8 @@ h1 {
   
 }
 .FlexTable-EvenRow {
-  background-color:  #505050;
-  color: white;
+  background-color:  #FFFF99;
+  color: black;
 }
 
 .FlexTable-ColumnLabel {

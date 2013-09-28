@@ -10,22 +10,29 @@
     <servlet-name>healthServlet</servlet-name>
     <servlet-class>com.health.server.HealthServiceImpl</servlet-class>
   </servlet>	
-
-  <servlet>
-    <servlet-name>uploadServlet</servlet-name>
-    <servlet-class>com.health.server.UploadServiceImpl</servlet-class>
-  </servlet>
-
   <servlet-mapping>
     <servlet-name>healthServlet</servlet-name>
     <url-pattern>/health/healthservice</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <servlet-name>uploadServlet</servlet-name>
+    <servlet-class>com.health.server.UploadServiceImpl</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>uploadServlet</servlet-name>
     <url-pattern>/health/uploadservice</url-pattern>
   </servlet-mapping>
 
+<servlet>
+    <servlet-name>chatInfo</servlet-name>
+    <servlet-class>com.health.server.ChatServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>chatInfo</servlet-name>
+    <url-pattern>/chat/chatservice</url-pattern>
+  </servlet-mapping>
+  
 	<servlet>
         <servlet-name>ErrorHandler</servlet-name>
         <servlet-class>com.health.common.server.ErrorHandler</servlet-class>
