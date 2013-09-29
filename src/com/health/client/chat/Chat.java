@@ -1,13 +1,13 @@
 package com.health.client.chat;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.FocusEvent;
+import com.google.gwt.event.dom.client.FocusHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyDownEvent;
 import com.google.gwt.event.dom.client.KeyDownHandler;
@@ -27,9 +27,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.google.gwt.user.datepicker.client.DateBox;
 import com.health.shared.ChatInfo;
-
 
 public class Chat implements EntryPoint {
 
@@ -40,12 +38,13 @@ public class Chat implements EntryPoint {
 	FlexTable getChatInfoFt = new FlexTable();
 	final Button sendButton = new Button("Send");
 	final TextBox chatText = new TextBox();
-	final Label errorLabel = new Label();
 	final HTML serverResponseLabel = new HTML();
 	final Image image = new Image();
 	VerticalPanel inputPanel = new VerticalPanel();
 	VerticalPanel displayPanel = new VerticalPanel();
-	List<ChatInfo> chatInfoList = null;
+	Timer timer;
+	final int TIMER_MILISECONDS = 2000;
+
 	public void onModuleLoad() {
 		loadImage();
 		getChatInfoFt.addStyleName("FlexTable");
@@ -54,15 +53,12 @@ public class Chat implements EntryPoint {
 		sendChat();
 		RootPanel.get("main").add(inputPanel);
 		displayPanel.add(getChatInfoFt);
-		
-		Timer timer = new Timer() {
+		 getChatInfoRpc();
+		 timer = new Timer() {
 		      public void run() {
-		    	  getChatInfoRpc();
+		    	  getChatInfoWithoutImageRpc();
 		      }
 		};
-
-	    // Execute the timer to expire 2 seconds in the future
-	    timer.schedule(2000);
 	}
 
 	private void loadImage() {
@@ -84,41 +80,50 @@ public class Chat implements EntryPoint {
 			}
 	
 			public void onSuccess(List<ChatInfo> result) {
-				if (chatInfoList == null) {
-					chatInfoList = result;
-				} else {
-					if (result.get(result.size()-1).id <= chatInfoList.get(chatInfoList.size()-1).id) {
-						return;
-					}
-				}
-				chatInfoList = result;
 				image.setVisible(false);
-				int row = 1;
-				getChatInfoFt.removeAllRows();
-				getChatInfoFt.setText(0, 0, "Chat Message");
-				getChatInfoFt.getRowFormatter().addStyleName(0,"FlexTable-Header");
-				
-				
-				for (ChatInfo chat : result) {
-					try {
-					row = getChatInfoFt.getRowCount();
-					getChatInfoFt.setText(row, 0, validTxt(chat.getChatInfo()));
-					} catch (Exception e) {
-						continue;
-					}
-					
-					 HTMLTable.RowFormatter rf = getChatInfoFt.getRowFormatter();
-					 for ( row = 1; row < getChatInfoFt.getRowCount(); ++row) {
-					      if ((row % 2) != 0) {
-					    	  rf.addStyleName(row, "FlexTable-OddRow");
-					      }
-					      else {
-					    	  rf.addStyleName(row, "FlexTable-EvenRow");
-					      }
-					 }
-				}
+				loadChaWithoutLoadImage(result);
+			    timer.schedule(TIMER_MILISECONDS);
 			}
 		});
+	}
+	
+	private void getChatInfoWithoutImageRpc() {
+		chatService.getInfoFromServer(new AsyncCallback<List<ChatInfo>>() {
+			@Override
+			public void onFailure(Throwable caught) {
+		        Window.alert("Failure!");
+			}
+	
+			public void onSuccess(List<ChatInfo> result) {
+				loadChaWithoutLoadImage(result);
+			}
+		});
+	}
+
+	private void loadChaWithoutLoadImage(List<ChatInfo> result) {
+		int row = 1;
+		getChatInfoFt.removeAllRows();
+		getChatInfoFt.setText(0, 0, "Chat Message");
+		getChatInfoFt.getRowFormatter().addStyleName(0,"FlexTable-Header");
+		for (ChatInfo chat : result) {
+			try {
+			row = getChatInfoFt.getRowCount();
+			getChatInfoFt.setText(row, 0, validTxt(chat.getChatInfo()));
+			} catch (Exception e) {
+				continue;
+			}
+			
+			 HTMLTable.RowFormatter rf = getChatInfoFt.getRowFormatter();
+			 for ( row = 1; row < getChatInfoFt.getRowCount(); ++row) {
+			      if ((row % 2) != 0) {
+			    	  rf.addStyleName(row, "FlexTable-OddRow");
+			      }
+			      else {
+			    	  rf.addStyleName(row, "FlexTable-EvenRow");
+			      }
+			 }
+		}
+		chatText.setFocus(true);
 	}
 	
 	public String validTxt(String str) {
@@ -144,7 +149,6 @@ public class Chat implements EntryPoint {
 		setInfoFt.setWidget(0, 1, chatText);
 		setInfoFt.setWidget(0, 3, sendButton);
 	
-		// Create a handler for the sendButton and nameField
 		class MyHandler implements ClickHandler, KeyUpHandler {
 			public void onClick(ClickEvent event) {
 				sendChatInformation();
@@ -159,10 +163,17 @@ public class Chat implements EntryPoint {
 		chatText.addKeyDownHandler(new KeyDownHandler() {
 		    @Override
 		    public void onKeyDown(KeyDownEvent event) {
-		     if(event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-		    	 sendChatInformation();
-           }
+			     if(event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
+			    	 sendChatInformation();
+	           }
 		    }
+		});
+		chatText.addFocusHandler(new FocusHandler() {
+			@Override
+			public void onFocus(FocusEvent event) {
+				timer.schedule(TIMER_MILISECONDS);
+				chatText.setFocus(true);
+			}
 		});
 		MyHandler handler = new MyHandler();
 		sendButton.addClickHandler(handler);
@@ -174,7 +185,6 @@ public class Chat implements EntryPoint {
 	private void sendChatInformation() {
 		image.setVisible(true);
 		// First, we validate the input.
-		errorLabel.setText("");
 		String chatInfo = chatText.getText();
 		if (chatInfo.length()  > 0 ) {
 		chatService.sentInfoToServer(chatInfo,
@@ -184,8 +194,14 @@ public class Chat implements EntryPoint {
 					}
 
 					public void onSuccess(String result) {
+						if (result.contains("Error")) {
+							Window.alert(result);
+							image.setVisible(false);
+							return;
+						}
 						chatText.setText("");
 						getChatInfoRpc();
+						chatText.setFocus(true);
 					}
 				});
 		} else {
@@ -193,5 +209,4 @@ public class Chat implements EntryPoint {
 			Window.alert("Empty string, please enter valid name ");
 		}
 	}
-	
 }
