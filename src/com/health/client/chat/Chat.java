@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Document;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.FocusEvent;
@@ -15,7 +14,6 @@ import com.google.gwt.event.dom.client.KeyDownHandler;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.i18n.client.DateTimeFormat;
-import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -26,7 +24,6 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -116,6 +113,7 @@ public class Chat implements EntryPoint {
 				
 				getChatInfoFt.setWidget(row, 0, htmlPanel);
 			} catch (Exception e) {
+				System.out.println("The out put are " + e);
 				continue;
 			}
 			
@@ -188,7 +186,16 @@ public class Chat implements EntryPoint {
 	private void sendChatInformation() {
 		image.setVisible(true);
 		String chatInfo = chatText.getText();
-		chatInfo = chatInfo.replaceAll(":)", "	<div class='laugh'></div>");
+		chatInfo = chatInfo.replaceAll(":\\)", "<img  class=\"smile\"></img>");
+		chatInfo = chatInfo.replaceAll(":D", "<img  class=\"laugh\"></img>");
+		chatInfo = chatInfo.replaceAll(":'\\(", "<img  class=\"cry\"></img>");
+		chatInfo = chatInfo.replaceAll("<3", "<img  class=\"love\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(angry\\)", "<img  class=\"angry\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(sad\\)", "<img  class=\"sad\"></img>");
+		chatInfo = chatInfo.replaceAll(":\\(", "<img  class=\"sad\"></img>");
+		chatInfo = chatInfo.replaceAll(":p", "<img  class=\"ps\"></img>");
+		
+		chatInfo = "<div  class=\"img\">" + chatInfo + "</div>";
 		if (chatInfo.length()  > 0 ) {
 		chatService.sentInfoToServer(chatInfo,
 				new AsyncCallback<String>() {

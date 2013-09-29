@@ -85,18 +85,72 @@ h1 {
   border-color: white;
   padding: 5px;
 }
-.laugh {
-	background: url("/images/smileys.jpg") 0 0;
+/*	
+	0px -180px crying 
+	0px -360px smile
+	0px 0px laugh
+	-300px -275px love	
+	(x and y)
+	-100px 0px blub
+	-200px 0px fever
+	-300	px 0px music
+	-400px 0px question mark 
+	*/
+	
+.ps {
+	background: url("/images/smileys.jpg") -200px -360px;
 	background-repeat:  no-repeat;
-	height: 55px;
-	width:  55px;
-	margin-padding: 10px;
+	width:  25px;
+	padding: 35px;
+}
+.angry {
+	background: url("/images/smileys.jpg") 0px -275px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.sad {
+	background: url("/images/smileys.jpg") -300px -360px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.laugh {
+	background: url("/images/smileys.jpg") 0px 0px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
 }
 
 .smile {
-	background: url("/images/smileys.jpg") 0, -70px;
+	background: url("/images/smileys.jpg") 0px -360px;
 	background-repeat:  no-repeat;
-	height: 55px;
-	width:  55px;
-	margin-padding: 10px;
+	width:  25px;
+	padding: 35px;
+}
+
+.cry {
+	background: url("/images/smileys.jpg") 0px -180px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.love {
+	background: url("/images/smileys.jpg") -300px -275px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.img {
+	vertical-align: middle;
+	font-size:200%;
+}
+div.desc
+{
+  text-align: center;
+  font-weight: normal;
+  width: 120px;
+  margin: 2px;
 }

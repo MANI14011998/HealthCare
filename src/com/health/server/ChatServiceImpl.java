@@ -20,6 +20,7 @@ public class ChatServiceImpl extends RemoteServiceServlet implements
 	static {
 		ObjectifyService.register(ChatInfo.class);
 	}
+	final int MAX_CHAT_LIMIT = 25;
 	
 	public String sentInfoToServer(String chatInfo) throws IllegalArgumentException {
 		
@@ -36,9 +37,9 @@ public class ChatServiceImpl extends RemoteServiceServlet implements
 		int row = 0 ;
 		
 		List<Key<ChatInfo>> chatInfoGreaterThan25RowsKeys = new ArrayList<Key<ChatInfo>>();
-		if (chatList.size() > 25) {
+		if (chatList.size() > MAX_CHAT_LIMIT) {
 			int count = chatList.size();
-			while (count >=25) {
+			while (count >= MAX_CHAT_LIMIT) {
 				chatInfoGreaterThan25RowsKeys.add(new Key<ChatInfo>(ChatInfo.class, chatList.get(row).id));
 				count--;
 				row++;
