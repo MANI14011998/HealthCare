@@ -85,3 +85,18 @@ h1 {
   border-color: white;
   padding: 5px;
 }
+.laugh {
+	background: url("/images/smileys.jpg") 0 0;
+	background-repeat:  no-repeat;
+	height: 55px;
+	width:  55px;
+	margin-padding: 10px;
+}
+
+.smile {
+	background: url("/images/smileys.jpg") 0, -70px;
+	background-repeat:  no-repeat;
+	height: 55px;
+	width:  55px;
+	margin-padding: 10px;
+}

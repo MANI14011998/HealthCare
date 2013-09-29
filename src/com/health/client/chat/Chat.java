@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Document;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.FocusEvent;
@@ -14,6 +15,7 @@ import com.google.gwt.event.dom.client.KeyDownHandler;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.i18n.client.DateTimeFormat;
+import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -21,6 +23,7 @@ import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
@@ -107,8 +110,11 @@ public class Chat implements EntryPoint {
 		getChatInfoFt.getRowFormatter().addStyleName(0,"FlexTable-Header");
 		for (ChatInfo chat : result) {
 			try {
-			row = getChatInfoFt.getRowCount();
-			getChatInfoFt.setText(row, 0, validTxt(chat.getChatInfo()));
+				row = getChatInfoFt.getRowCount();
+				String htmlStr = validTxt(chat.getChatInfo());
+				HTMLPanel htmlPanel = new HTMLPanel(htmlStr);
+				
+				getChatInfoFt.setWidget(row, 0, htmlPanel);
 			} catch (Exception e) {
 				continue;
 			}
@@ -179,13 +185,10 @@ public class Chat implements EntryPoint {
 		sendButton.addClickHandler(handler);
 	}
 
-	/**
-	 * Send the name from the nameField to the server and wait for a response.
-	 */
 	private void sendChatInformation() {
 		image.setVisible(true);
-		// First, we validate the input.
 		String chatInfo = chatText.getText();
+		chatInfo = chatInfo.replaceAll(":)", "	<div class='laugh'></div>");
 		if (chatInfo.length()  > 0 ) {
 		chatService.sentInfoToServer(chatInfo,
 				new AsyncCallback<String>() {
