@@ -46,7 +46,6 @@ public class Chat implements EntryPoint {
 	final int TIMER_MILISECONDS = 2000;
 
 	public void onModuleLoad() {
-		loadImage();
 		getChatInfoFt.addStyleName("FlexTable");
 		getChatInfoFt.setWidth("500px");
 		RootPanel.get("main").add(displayPanel);
@@ -59,6 +58,7 @@ public class Chat implements EntryPoint {
 		    	  getChatInfoWithoutImageRpc();
 		      }
 		};
+		loadImage();
 	}
 
 	private void loadImage() {
@@ -66,7 +66,7 @@ public class Chat implements EntryPoint {
 		image.setVisible(false);
 		AbsolutePanel loadImagePanel = new AbsolutePanel ();
 		loadImagePanel.add(image);
-		displayPanel.add(loadImagePanel);
+		RootPanel.get("main").add(loadImagePanel);
 	}
 
 	private void getChatInfoRpc() {

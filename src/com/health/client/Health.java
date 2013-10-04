@@ -24,10 +24,8 @@ import com.health.shared.PatientInfo;
 
 
 public class Health implements EntryPoint {
-    // You must use a FormPanel to create a blobstore upload form
 	final FormPanel uploadForm = new FormPanel();
 	
-	  // Use an RPC call to the Blob Service to get the blobstore upload url
 	HealthServiceAsync healthService = GWT.create(HealthService.class);
 	
 	VerticalPanel mainVerticalPanel = new VerticalPanel();
