@@ -97,24 +97,8 @@ h1 {
 	-400px 0px question mark 
 	*/
 	
-.ps {
-	background: url("/images/smileys.jpg") -200px -360px;
-	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
-}
-.angry {
-	background: url("/images/smileys.jpg") 0px -275px;
-	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
-}
-.sad {
-	background: url("/images/smileys.jpg") -300px -360px;
-	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
-}
+
+
 .laugh {
 	background: url("/images/smileys.jpg") 0px 0px;
 	background-repeat:  no-repeat;
@@ -122,8 +106,62 @@ h1 {
 	padding: 35px;
 }
 
-.smile {
-	background: url("/images/smileys.jpg") 0px -360px;
+.blub {
+	background: url("/images/smileys.jpg") -100px 0px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.fever {
+	background: url("/images/smileys.jpg") -200px 0px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.music {
+	background: url("/images/smileys.jpg") -300px 0px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.question {
+	background: url("/images/smileys.jpg") -400px 0px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+	
+.exclamator {
+	background: url("/images/smileys.jpg") 0px -90px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.coin {
+	background: url("/images/smileys.jpg") -100px -90px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.thumsup {
+	background: url("/images/smileys.jpg") -200px -90px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.call {
+	background: url("/images/smileys.jpg") -300px -90px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.rofl {
+	background: url("/images/smileys.jpg") -400px -90px;
 	background-repeat:  no-repeat;
 	width:  25px;
 	padding: 35px;
@@ -136,13 +174,186 @@ h1 {
 	padding: 35px;
 }
 
+.oh {
+	background: url("/images/smileys.jpg") -100px -180px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.ah {
+	background: url("/images/smileys.jpg") -200px -180px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.ahh {
+	background: url("/images/smileys.jpg") -300px -180px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.cool {
+	background: url("/images/smileys.jpg") -400px -180px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.angry {
+	background: url("/images/smileys.jpg") 0px -275px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.angry1 {
+	background: url("/images/smileys.jpg") -100px -275px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.wink {
+	background: url("/images/smileys.jpg") -200px -275px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
 .love {
 	background: url("/images/smileys.jpg") -300px -275px;
 	background-repeat:  no-repeat;
 	width:  25px;
 	padding: 35px;
 }
+.crazy {
+	background: url("/images/smileys.jpg") -400px -275px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
 
+.smile {
+	background: url("/images/smileys.jpg") 0px -360px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.smile1 {
+	background: url("/images/smileys.jpg") -100px -360px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.ps {
+	background: url("/images/smileys.jpg") -200px -360px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.sad {
+	background: url("/images/smileys.jpg") -300px -360px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.worry {
+	background: url("/images/smileys.jpg") -400px -360px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.mad {
+	background: url("/images/smileys.jpg") 0px -450px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.confused {
+	background: url("/images/smileys.jpg") -100px -450px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.smirk {
+	background: url("/images/smileys.jpg") -200px -450px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.kiss {
+	background: url("/images/smileys.jpg") -300px -450px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.shut {
+	background: url("/images/smileys.jpg") -400px -450px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+
+.party {
+	background: url("/images/smileys.jpg") 0px -540px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.cat {
+	background: url("/images/smileys.jpg") -100px -540px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.nerd {
+	background: url("/images/smileys.jpg") -200px -540px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.devil {
+	background: url("/images/smileys.jpg") -300px -540px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.angel {
+	background: url("/images/smileys.jpg") -400px -540px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+
+.kissed {
+	background: url("/images/smileys.jpg") 0px -630px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.money {
+	background: url("/images/smileys.jpg") -100px -630px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.tense {
+	background: url("/images/smileys.jpg") -200px -630px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.cap {
+	background: url("/images/smileys.jpg") -300px -630px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
+.gloom {
+	background: url("/images/smileys.jpg") -400px -630px;
+	background-repeat:  no-repeat;
+	width:  25px;
+	padding: 35px;
+}
 .img {
 	vertical-align: middle;
 	font-size:200%;

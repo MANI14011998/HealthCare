@@ -186,14 +186,59 @@ public class Chat implements EntryPoint {
 	private void sendChatInformation() {
 		image.setVisible(true);
 		String chatInfo = chatText.getText();
-		chatInfo = chatInfo.replaceAll(":\\)", "<img  class=\"smile\"></img>");
+		
 		chatInfo = chatInfo.replaceAll(":D", "<img  class=\"laugh\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(blub\\)", "<img  class=\"blub\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(fever\\)", "<img  class=\"fever\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(music\\)", "<img  class=\"music\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(question\\)", "<img  class=\"question\"></img>");
+		
+		chatInfo = chatInfo.replaceAll("\\(exclamator\\)", "<img  class=\"exclamator\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(coin\\)", "<img  class=\"coin\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(thumsup\\)", "<img  class=\"thumsup\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(call\\)", "<img  class=\"call\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(rofl\\)", "<img  class=\"rofl\"></img>");
+		
+		chatInfo = chatInfo.replaceAll("\\(cry\\)", "<img  class=\"cry\"></img>");
 		chatInfo = chatInfo.replaceAll(":'\\(", "<img  class=\"cry\"></img>");
-		chatInfo = chatInfo.replaceAll("<3", "<img  class=\"love\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(oh\\)", "<img  class=\"oh\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(ah\\)", "<img  class=\"ah\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(ahh\\)", "<img  class=\"ahh\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(cool\\)", "<img  class=\"cool\"></img>");
+		
 		chatInfo = chatInfo.replaceAll("\\(angry\\)", "<img  class=\"angry\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(angry1\\)", "<img  class=\"angry1\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(wink\\)", "<img  class=\"wink\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(love\\)", "<img  class=\"love\"></img>");
+		chatInfo = chatInfo.replaceAll("<3", "<img  class=\"love\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(crazy\\)", "<img  class=\"crazy\"></img>");
+		
+		chatInfo = chatInfo.replaceAll("\\(smile\\)", "<img  class=\"smile\"></img>");
+		chatInfo = chatInfo.replaceAll(":\\)", "<img  class=\"smile\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(smile1\\)", "<img  class=\"smile1\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(ps\\)", "<img  class=\"ps\"></img>");
+		chatInfo = chatInfo.replaceAll(":p", "<img  class=\"ps\"></img>");
 		chatInfo = chatInfo.replaceAll("\\(sad\\)", "<img  class=\"sad\"></img>");
 		chatInfo = chatInfo.replaceAll(":\\(", "<img  class=\"sad\"></img>");
-		chatInfo = chatInfo.replaceAll(":p", "<img  class=\"ps\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(worry\\)", "<img  class=\"worry\"></img>");
+
+		chatInfo = chatInfo.replaceAll("\\(mad\\)", "<img  class=\"mad\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(confused\\)", "<img  class=\"confused\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(smirk\\)", "<img  class=\"smirk\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(kiss\\)", "<img  class=\"kiss\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(shut\\)", "<img  class=\"shut\"></img>");
+
+		chatInfo = chatInfo.replaceAll("\\(party\\)", "<img  class=\"party\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(cat\\)", "<img  class=\"cat\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(nerd\\)", "<img  class=\"nerd\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(devil\\)", "<img  class=\"devil\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(angel\\)", "<img  class=\"angel\"></img>");
+		
+		chatInfo = chatInfo.replaceAll("\\(kissed\\)", "<img  class=\"kissed\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(money\\)", "<img  class=\"money\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(tense\\)", "<img  class=\"tense\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(cap\\)", "<img  class=\"cap\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(gloom\\)", "<img  class=\"gloom\"></img>");
 		
 		chatInfo = "<div  class=\"img\">" + chatInfo + "</div>";
 		if (chatInfo.length()  > 0 ) {
