@@ -227,6 +227,8 @@ public class Chat implements EntryPoint {
 		chatInfo = chatInfo.replaceAll("\\(smirk\\)", "<img  class=\"smirk\"></img>");
 		chatInfo = chatInfo.replaceAll("\\(kiss\\)", "<img  class=\"kiss\"></img>");
 		chatInfo = chatInfo.replaceAll("\\(shut\\)", "<img  class=\"shut\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(:x\\)", "<img  class=\"shut\"></img>");
+		
 
 		chatInfo = chatInfo.replaceAll("\\(party\\)", "<img  class=\"party\"></img>");
 		chatInfo = chatInfo.replaceAll("\\(cat\\)", "<img  class=\"cat\"></img>");
