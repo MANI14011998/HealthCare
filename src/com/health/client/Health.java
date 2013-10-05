@@ -21,8 +21,6 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.health.shared.PatientInfo;
 
-
-
 public class Health implements EntryPoint {
 	final FormPanel uploadForm = new FormPanel();
 	

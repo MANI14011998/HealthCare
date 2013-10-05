@@ -1,6 +1,5 @@
-<!-- Indices written at Sun, 6 Oct 2013 00:18:09 IST -->
-
-<datastore-indexes>
+<?xml version="1.0" encoding="utf-8"?>
+<datastore-indexes  autoGenerate="true">
 
     <!-- Used 3 times in query history -->
     <datastore-index kind="ChatInfo" ancestor="false" source="auto">

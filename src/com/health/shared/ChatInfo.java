@@ -14,6 +14,15 @@ public class ChatInfo implements Serializable {
 	public Long id;
 	private String chatInfo;
 	private Date createDate;
+	private boolean delete = false;
+
+	public boolean isDelete() {
+		return delete;
+	}
+
+	public void setDelete(boolean delete) {
+		this.delete = delete;
+	}
 
 	public Date getCreateDate() {
 		return createDate;
