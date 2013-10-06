@@ -265,8 +265,8 @@ public class Chat implements EntryPoint {
 		int row = 1;
 		getChatInfoFt.removeAllRows();
 		getChatInfoFt.setText(0, 0,  "User Name(Nick Name)");
-		getChatInfoFt.setText(0, 0,  "Chat Message");
-		getChatInfoFt.setText(0, 0,  "Time Stamp");
+		getChatInfoFt.setText(0, 1,  "Chat Message");
+		getChatInfoFt.setText(0, 2,  "Time Stamp");
 		getChatInfoFt.getRowFormatter().addStyleName(0,"FlexTable-Header");
 		for (ChatInfo chat : result) {
 			try {
