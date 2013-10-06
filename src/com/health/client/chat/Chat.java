@@ -28,6 +28,7 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.health.shared.ChatInfo;
@@ -41,7 +42,7 @@ public class Chat implements EntryPoint {
 	FlexTable getChatInfoFt = new FlexTable();
 	FlexTable infoFlexTable = new FlexTable();
 	final Button sendButton = new Button("Send");
-	final TextBox chatText = new TextBox();
+	final TextArea  chatText = new TextArea ();
 	final HTML serverResponseLabel = new HTML();
 	final Image image = new Image();
 	VerticalPanel inputPanel = new VerticalPanel();
@@ -135,7 +136,7 @@ public class Chat implements EntryPoint {
 		VerticalPanel infoPanel = new VerticalPanel();
 		
 		
-		infoPanel.add(new HTMLPanel("<b>This is open chat to everyone</b> <br>  <h2>Smileys you can use are as follows :<h2>"));
+		infoPanel.add(new HTMLPanel("<b>This is chat to everyone, use chrome for better perfomance.</b> <br>  <h2>Smileys you can use are as follows :<h2>"));
 		infoPanel.add(infoFlexTable);
 		infoFlexTable.addStyleName("infoStyle");
 		infoFlexTable.setWidget(0, 0, new HTMLPanel("<img  class=\"laugh\"></img>"));
@@ -263,8 +264,9 @@ public class Chat implements EntryPoint {
 	private void loadChaWithoutLoadImage(List<ChatInfo> result) {
 		int row = 1;
 		getChatInfoFt.removeAllRows();
+		getChatInfoFt.setText(0, 0,  "User Name(Nick Name)");
 		getChatInfoFt.setText(0, 0,  "Chat Message");
-		getChatInfoFt.getFlexCellFormatter().setColSpan(0, 0, 2);
+		getChatInfoFt.setText(0, 0,  "Time Stamp");
 		getChatInfoFt.getRowFormatter().addStyleName(0,"FlexTable-Header");
 		for (ChatInfo chat : result) {
 			try {
@@ -313,11 +315,14 @@ public class Chat implements EntryPoint {
 	}
 	
 	private void sendChat() {
+		
+		chatText.setCharacterWidth(50);
+		chatText.setVisibleLines(5);
 		inputPanel.add(setInfoFt);
 		sendButton.addStyleName("sendButton");
 		chatText.setFocus(true);
 		sendButton.addStyleName("sendButton");
-		setInfoFt.setWidget(0, 0, new HTML("<div align=\"center\"><b>Enter Text Information</b></div>"));
+		setInfoFt.setWidget(0, 0, new HTML("<div align=\"center\"><b>Enter Chat Message Here :</b></div>"));
 		setInfoFt.setWidget(0, 1, chatText);
 		setInfoFt.setWidget(0, 3, sendButton);
 	
