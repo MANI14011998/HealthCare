@@ -11,6 +11,6 @@ import com.health.shared.ChatInfo;
 
 @RemoteServiceRelativePath("chatservice")
 public interface ChatService extends RemoteService {
-	String sentInfoToServer(String name) throws IllegalArgumentException;
+	String sentInfoToServer(String chatInfo, String userName) throws IllegalArgumentException;
 	List<ChatInfo> getInfoFromServer();
 }

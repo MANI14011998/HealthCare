@@ -9,7 +9,7 @@ import com.health.shared.ChatInfo;
 
 public interface ChatServiceAsync {
 
-	void sentInfoToServer(String chatInfo, AsyncCallback<String> callback)
+	void sentInfoToServer(String chatInfo, String userName, AsyncCallback<String> callback)
 			throws IllegalArgumentException;
 	
 	void getInfoFromServer(AsyncCallback<List<ChatInfo>> callback)

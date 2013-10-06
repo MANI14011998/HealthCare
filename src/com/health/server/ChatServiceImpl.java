@@ -1,5 +1,6 @@
 package com.health.server;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -26,7 +27,7 @@ public class ChatServiceImpl extends RemoteServiceServlet implements
 	}
 	final int MAX_CHAT_LIMIT = 25;
 	
-	public String sentInfoToServer(String chatInfo) throws IllegalArgumentException {
+	public String sentInfoToServer(String chatInfo, String userName) throws IllegalArgumentException {
 		
 		String lowerCase  = chatInfo.toLowerCase();
 		if(lowerCase.contains("sex") || lowerCase.contains("fuck") || lowerCase.contains("shit")) {
@@ -34,10 +35,16 @@ public class ChatServiceImpl extends RemoteServiceServlet implements
 		}
 		ChatInfo chat = new ChatInfo();
 		chat.setChatInfo(chatInfo);
-		
+		chat.setUserName(userName);
 		Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("GMT+530"));
 		cal.setTime(new Date());
 		chat.setCreateDate(cal.getTime());
+		
+		SimpleDateFormat sdf = 
+			      new SimpleDateFormat ("E dd-MM-yyyy hh:mm:ss a zzz");
+		sdf.setTimeZone(TimeZone.getTimeZone("IST"));
+		chat.setMsgDate(sdf.format(new Date()));
+
 		ofy.put(chat);
 		
 		List<ChatInfo>  chatList = ofy.query(ChatInfo.class).order("createDate").list();

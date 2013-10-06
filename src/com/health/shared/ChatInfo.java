@@ -15,6 +15,23 @@ public class ChatInfo implements Serializable {
 	private String chatInfo;
 	private Date createDate;
 	private boolean delete = false;
+	private String msgDate = "";
+	public String userName;
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getMsgDate() {
+		return msgDate;
+	}
+
+	public void setMsgDate(String msgDate) {
+		this.msgDate = msgDate;
+	}
 
 	public boolean isDelete() {
 		return delete;

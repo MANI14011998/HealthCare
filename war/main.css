@@ -1,4 +1,4 @@
-/** Add css rules here for your application. */
+	/** Add css rules here for your application. */
 
 
 /** Example rules used by the template application (remove for your app) */
@@ -33,7 +33,11 @@ h1 {
   margin: 15px 6px 6px;
 }
 
-
+.infoStyle {
+	text-align: center;
+	font-weight: bold;
+	
+}
 .FlexTable {
   table-layout: fixed;
   border-top: thin solid #444444;
@@ -85,6 +89,16 @@ h1 {
   border-color: white;
   padding: 5px;
 }
+
+.userNameColumn {
+	 font-weight: bold;
+	 width: 200px;
+}
+.timeStampColumn {
+	 font-weight: bold;
+	  width: 250px;
+}
+
 /*	
 	0px -180px crying 
 	0px -360px smile
@@ -96,8 +110,6 @@ h1 {
 	-300	px 0px music
 	-400px 0px question mark 
 	*/
-	
-
 
 .laugh {
 	background: url("/images/smileys.jpg") 0px 0px;
