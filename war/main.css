@@ -118,7 +118,7 @@ h1 {
 	padding: 35px;
 }
 
-.blub {
+.bulb {
 	background: url("/images/smileys.jpg") -100px 0px;
 	background-repeat:  no-repeat;
 	width:  25px;
@@ -152,14 +152,14 @@ h1 {
 	width:  25px;
 	padding: 35px;
 }
-.coin {
+.thumbsdown {
 	background: url("/images/smileys.jpg") -100px -90px;
 	background-repeat:  no-repeat;
 	width:  25px;
 	padding: 35px;
 }
 
-.thumsup {
+.thumbsup {
 	background: url("/images/smileys.jpg") -200px -90px;
 	background-repeat:  no-repeat;
 	width:  25px;

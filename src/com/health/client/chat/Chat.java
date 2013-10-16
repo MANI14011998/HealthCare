@@ -1,6 +1,5 @@
 package com.health.client.chat;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import com.google.gwt.core.client.EntryPoint;
@@ -20,13 +19,14 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
@@ -35,29 +35,33 @@ import com.health.shared.ChatInfo;
 
 public class Chat implements EntryPoint {
 
-	private final ChatServiceAsync chatService = GWT
+	  private final ChatServiceAsync chatService = GWT
 			.create(ChatService.class);
 
-	FlexTable setInfoFt = new FlexTable();
-	FlexTable getChatInfoFt = new FlexTable();
-	FlexTable infoFlexTable = new FlexTable();
-	final Button sendButton = new Button("Send");
-	final TextArea  chatText = new TextArea ();
-	final HTML serverResponseLabel = new HTML();
-	final Image image = new Image();
-	VerticalPanel inputPanel = new VerticalPanel();
-	VerticalPanel displayPanel = new VerticalPanel();
-	Timer timer;
-	final int TIMER_MILISECONDS = 2000;
+	  FlexTable setInfoFt = new FlexTable();
+	  FlexTable getChatInfoFt = new FlexTable();
+	  static FlexTable infoFlexTable = new FlexTable();
+	  final Button sendButton = new Button("Send");
+	  final Button insertSmiley = new Button("Insert  Smiley");
+	  VerticalPanel smileyPanel = new VerticalPanel();
+	  HTMLPanel smileyLabel = new HTMLPanel("<b>Please click the smiley icon down to insert.</b> <br> ");
 	
-	final HTMLPanel enterUserNamehtmlPanel = new HTMLPanel("<div style=' background-color: #FFFFFF; padding: 5px;font-weight: bold;'>Enter User Name</div>");
-	final TextBox userNameTxt = new TextBox();
-	final Button addUserButton = new Button("Add User");
-	HorizontalPanel addUserPanel = new HorizontalPanel();
-	 String userName = "";
+	  final static TextArea  chatText = new TextArea ();
+	  final HTML serverResponseLabel = new HTML();
+	  final Image image = new Image();
+	  VerticalPanel inputPanel = new VerticalPanel();
+	  VerticalPanel displayPanel = new VerticalPanel();
+	  Timer timer;
+	  final int TIMER_MILISECONDS = 2000;
 	
-	public void onModuleLoad() {
+	  final HTMLPanel enterUserNamehtmlPanel = new HTMLPanel("<div style=' background-color: #FFFFFF; padding: 5px;font-weight: bold;'>Enter User Name</div>");
+	  final TextBox userNameTxt = new TextBox();
+	  final Button addUserButton = new Button("Add User");
+	  HorizontalPanel addUserPanel = new HorizontalPanel();
+	  String userName = "";
+	  VerticalPanel infoPanel = new VerticalPanel();
 		
+	  public void onModuleLoad() {
 		RootPanel.get("main").add(addUserPanel);
 		addUser();
 		getChatInfoFt.addStyleName("FlexTable");
@@ -72,6 +76,13 @@ public class Chat implements EntryPoint {
 		      }
 		};
 		loadImage();
+		
+		smileyPanel.add(smileyLabel);
+		smileyPanel.add(infoFlexTable);
+		smileyPanel.setVisible(false);
+		RootPanel.get("main").add(smileyPanel);
+		infoPanel.add(new HTMLPanel("<b>This is chat to everyone, use chrome for better perfomance. Any technical issue please email to : sureshgbabu85@gmail.com.</b> <br> "));
+		RootPanel.get("main").add(infoPanel);
 	}
 	
 	public void displayChatIfUserPresent() {
@@ -133,103 +144,78 @@ public class Chat implements EntryPoint {
 		loadImagePanel.add(image);
 		RootPanel.get("main").add(loadImagePanel);
 		
-		VerticalPanel infoPanel = new VerticalPanel();
-		
-		
-		infoPanel.add(new HTMLPanel("<b>This is chat to everyone, use chrome for better perfomance.</b> <br>  <h2>Smileys you can use are as follows :<h2>"));
-		infoPanel.add(infoFlexTable);
 		infoFlexTable.addStyleName("infoStyle");
 		infoFlexTable.setWidget(0, 0, new HTMLPanel("<img  class=\"laugh\"></img>"));
-		infoFlexTable.setText(0, 1, ":D" );
-		infoFlexTable.setWidget(0, 2, new HTMLPanel("<img  class=\"blub\"></img>"));
-		infoFlexTable.setText(0, 3, "(blub)" );
-		infoFlexTable.setWidget(0, 4 , new HTMLPanel("<img  class=\"fever\"></img>"));
-		infoFlexTable.setText(0, 5, "(fever)" );
-		infoFlexTable.setWidget(0, 6, new HTMLPanel("<img  class=\"music\"></img>"));
-		infoFlexTable.setText(0, 7, "(music)" );
-		infoFlexTable.setWidget(0, 8, new HTMLPanel("<img  class=\"question\"></img>"));
-		infoFlexTable.setText(0, 9, "(question)" );
-		
+		infoFlexTable.setWidget(0, 1, new HTMLPanel("<img  class=\"bulb\"></img>"));
+		infoFlexTable.setWidget(0, 2 , new HTMLPanel("<img  class=\"fever\"></img>"));
+		infoFlexTable.setWidget(0, 3, new HTMLPanel("<img  class=\"music\"></img>"));
+		infoFlexTable.setWidget(0, 4, new HTMLPanel("<img  class=\"question\"></img>"));
 		
 		infoFlexTable.setWidget(1, 0, new HTMLPanel("<img  class=\"exclamator\"></img>"));
-		infoFlexTable.setText(1, 1, "(exclamator)" );
-		infoFlexTable.setWidget(1, 2, new HTMLPanel("<img  class=\"coin\"></img>"));
-		infoFlexTable.setText(1, 3, "(coin)" );
-		infoFlexTable.setWidget(1, 4 , new HTMLPanel("<img  class=\"thumsup\"></img>"));
-		infoFlexTable.setText(1, 5, "(thumsup)" );
-		infoFlexTable.setWidget(1, 6, new HTMLPanel("<img  class=\"call\"></img>"));
-		infoFlexTable.setText(1, 7, "(call)" );
-		infoFlexTable.setWidget(1, 8, new HTMLPanel("<img  class=\"rofl\"></img>"));
-		infoFlexTable.setText(1, 9, "(rofl)" );
+		infoFlexTable.setWidget(1, 1, new HTMLPanel("<img  class=\"thumbsdown\"></img>"));
+		infoFlexTable.setWidget(1, 2 , new HTMLPanel("<img  class=\"thumbsup\"></img>"));
+		infoFlexTable.setWidget(1, 3, new HTMLPanel("<img  class=\"call\"></img>"));
+		infoFlexTable.setWidget(1, 4, new HTMLPanel("<img  class=\"rofl\"></img>"));
 
 		infoFlexTable.setWidget(2, 0, new HTMLPanel("<img  class=\"cry\"></img>"));
-		infoFlexTable.setText(2, 1, "(cry)" );
-		infoFlexTable.setWidget(2, 2, new HTMLPanel("<img  class=\"oh\"></img>"));
-		infoFlexTable.setText(2, 3, "(oh)" );
-		infoFlexTable.setWidget(2, 4 , new HTMLPanel("<img  class=\"ah\"></img>"));
-		infoFlexTable.setText(2, 5, "(ah)" );
-		infoFlexTable.setWidget(2, 6, new HTMLPanel("<img  class=\"ahh\"></img>"));
-		infoFlexTable.setText(2, 7, "(ahh)" );
-		infoFlexTable.setWidget(2, 8, new HTMLPanel("<img  class=\"cool\"></img>"));
-		infoFlexTable.setText(2, 9, "(cool)" );
+		infoFlexTable.setWidget(2, 1, new HTMLPanel("<img  class=\"oh\"></img>"));
+		infoFlexTable.setWidget(2, 2 , new HTMLPanel("<img  class=\"ah\"></img>"));
+		infoFlexTable.setWidget(2, 3, new HTMLPanel("<img  class=\"ahh\"></img>"));
+		infoFlexTable.setWidget(2, 4, new HTMLPanel("<img  class=\"cool\"></img>"));
 		
 		infoFlexTable.setWidget(3, 0, new HTMLPanel("<img  class=\"angry\"></img>"));
-		infoFlexTable.setText(3, 1, "(angry)" );
-		infoFlexTable.setWidget(3, 2, new HTMLPanel("<img  class=\"angry1\"></img>"));
-		infoFlexTable.setText(3, 3, "(angry1)" );
-		infoFlexTable.setWidget(3, 4 , new HTMLPanel("<img  class=\"wink\"></img>"));
-		infoFlexTable.setText(3, 5, "(wink)" );
-		infoFlexTable.setWidget(3, 6, new HTMLPanel("<img  class=\"love\"></img>"));
-		infoFlexTable.setText(3, 7, "(love)" );
-		infoFlexTable.setWidget(3, 8, new HTMLPanel("<img  class=\"crazy\"></img>"));
-		infoFlexTable.setText(3, 9, "(crazy)" );
+		infoFlexTable.setWidget(3, 1, new HTMLPanel("<img  class=\"angry1\"></img>"));
+		infoFlexTable.setWidget(3, 2 , new HTMLPanel("<img  class=\"wink\"></img>"));
+		infoFlexTable.setWidget(3, 3, new HTMLPanel("<img  class=\"love\"></img>"));
+		infoFlexTable.setWidget(3, 4, new HTMLPanel("<img  class=\"crazy\"></img>"));
 		
 		infoFlexTable.setWidget(4, 0, new HTMLPanel("<img  class=\"smile\"></img>"));
-		infoFlexTable.setText(4, 1, "(smile)" );
-		infoFlexTable.setWidget(4, 2, new HTMLPanel("<img  class=\"smile1\"></img>"));
-		infoFlexTable.setText(4, 3, "(smile1)" );
-		infoFlexTable.setWidget(4, 4 , new HTMLPanel("<img  class=\"ps\"></img>"));
-		infoFlexTable.setText(4, 5, ":p" );
-		infoFlexTable.setWidget(4, 6, new HTMLPanel("<img  class=\"sad\"></img>"));
-		infoFlexTable.setText(4, 7, "(sad)" );
-		infoFlexTable.setWidget(4, 8, new HTMLPanel("<img  class=\"worry\"></img>"));
-		infoFlexTable.setText(4, 9, "(worry)" );
+		infoFlexTable.setWidget(4, 1, new HTMLPanel("<img  class=\"smile1\"></img>"));
+		infoFlexTable.setWidget(4, 2 , new HTMLPanel("<img  class=\"ps\"></img>"));
+		infoFlexTable.setWidget(4, 3, new HTMLPanel("<img  class=\"sad\"></img>"));
+		infoFlexTable.setWidget(4, 4, new HTMLPanel("<img  class=\"worry\"></img>"));
 		
 		infoFlexTable.setWidget(5, 0, new HTMLPanel("<img  class=\"mad\"></img>"));
-		infoFlexTable.setText(5, 1, "(mad)" );
-		infoFlexTable.setWidget(5, 2, new HTMLPanel("<img  class=\"confused\"></img>"));
-		infoFlexTable.setText(5, 3, "(confused)" );
-		infoFlexTable.setWidget(5, 4 , new HTMLPanel("<img  class=\"smirk\"></img>"));
-		infoFlexTable.setText(5, 5, "(smirk)" );
-		infoFlexTable.setWidget(5, 6, new HTMLPanel("<img  class=\"kiss\"></img>"));
-		infoFlexTable.setText(5, 7, "(kiss)" );
-		infoFlexTable.setWidget(5, 8, new HTMLPanel("<img  class=\"shut\"></img>"));
-		infoFlexTable.setText(5, 9, "(shut)" );
+		infoFlexTable.setWidget(5, 1, new HTMLPanel("<img  class=\"confused\"></img>"));
+		infoFlexTable.setWidget(5, 2 , new HTMLPanel("<img  class=\"smirk\"></img>"));
+		infoFlexTable.setWidget(5, 3, new HTMLPanel("<img  class=\"kiss\"></img>"));
+		infoFlexTable.setWidget(5, 4, new HTMLPanel("<img  class=\"shut\"></img>"));
 
 		infoFlexTable.setWidget(6, 0, new HTMLPanel("<img  class=\"party\"></img>"));
-		infoFlexTable.setText(6, 1, "(party)" );
-		infoFlexTable.setWidget(6, 2, new HTMLPanel("<img  class=\"cat\"></img>"));
-		infoFlexTable.setText(6, 3, "(cat)" );
-		infoFlexTable.setWidget(6, 4 , new HTMLPanel("<img  class=\"nerd\"></img>"));
-		infoFlexTable.setText(6, 5, "(nerd)" );
-		infoFlexTable.setWidget(6, 6, new HTMLPanel("<img  class=\"devil\"></img>"));
-		infoFlexTable.setText(6, 7, "(devil)" );
-		infoFlexTable.setWidget(6, 8, new HTMLPanel("<img  class=\"angel\"></img>"));
-		infoFlexTable.setText(6, 9, "(angel)" );
+		infoFlexTable.setWidget(6, 1, new HTMLPanel("<img  class=\"cat\"></img>"));
+		infoFlexTable.setWidget(6, 2 , new HTMLPanel("<img  class=\"nerd\"></img>"));
+		infoFlexTable.setWidget(6, 3, new HTMLPanel("<img  class=\"devil\"></img>"));
+		infoFlexTable.setWidget(6, 4, new HTMLPanel("<img  class=\"angel\"></img>"));
 		
 		infoFlexTable.setWidget(7, 0, new HTMLPanel("<img  class=\"kissed\"></img>"));
-		infoFlexTable.setText(7, 1, "(kissed)" );
-		infoFlexTable.setWidget(7, 2, new HTMLPanel("<img  class=\"money\"></img>"));
-		infoFlexTable.setText(7, 3, "(money)" );
-		infoFlexTable.setWidget(7, 4 , new HTMLPanel("<img  class=\"tense\"></img>"));
-		infoFlexTable.setText(7, 5, "(tense)" );
-		infoFlexTable.setWidget(7, 6, new HTMLPanel("<img  class=\"cap\"></img>"));
-		infoFlexTable.setText(7, 7, "(cap)" );
-		infoFlexTable.setWidget(7, 8, new HTMLPanel("<img  class=\"gloom\"></img>"));
-		infoFlexTable.setText(7, 9, "(gloom)" );
-		RootPanel.get("main").add(infoPanel);
-	}
+		infoFlexTable.setWidget(7, 1, new HTMLPanel("<img  class=\"money\"></img>"));
+		infoFlexTable.setWidget(7, 2 , new HTMLPanel("<img  class=\"tense\"></img>"));
+		infoFlexTable.setWidget(7, 3, new HTMLPanel("<img  class=\"cap\"></img>"));
+		infoFlexTable.setWidget(7, 4, new HTMLPanel("<img  class=\"gloom\"></img>"));
+		
+		infoFlexTable.addClickHandler( new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent event) {
+                int cellIndex = infoFlexTable.getCellForEvent(event).getCellIndex();
+                int rowIndex = infoFlexTable.getCellForEvent(event).getRowIndex();
+                chatText.setText(chatText.getText() + smileysText[rowIndex][cellIndex]);
+                smileyPanel.setVisible(false);
+            }	
+        });
 
+	}
+	
+	static String[][] smileysText = {
+		{ ":D", "(bulb)", "(fever)", "(music)", "(question)" },
+		{ "(exclamator)", "(thumbsdown)", "(thumbsup)", "(call)", "(rofl)" },
+		{ "(cry)", "(oh)", "(ah)", "(ahh)", "(cool)" },
+		{ "(angry)", "(angry1)", "(wink)", "(love)", "(crazy)" },
+		{ "(smile)", "(smile1)", "(ps)", "(sad)", "(worry)" },
+		{ "(mad)", "(confused)", "(smirk)", "(kiss)", "(shut)" },
+		{ "(party)", "(cat)", "(nerd)", "(devil)", "(angel)" },
+		{ "(kissed)", "(money)", "(tense)", "(cap)", "(gloom)" }
+	};
+	
 	private void getChatInfoRpc() {
 		image.setVisible(true);
 		chatService.getInfoFromServer(new AsyncCallback<List<ChatInfo>>() {
@@ -275,11 +261,11 @@ public class Chat implements EntryPoint {
 				HTMLPanel htmlPanel = new HTMLPanel(htmlStr);
 				getChatInfoFt.setText(row, 0, chat.getUserName());
 				getChatInfoFt.getCellFormatter().addStyleName(row, 0,  "userNameColumn");
-			//	getChatInfoFt.getFlexCellFormatter().setWidth(row, 0, "200px");
 				getChatInfoFt.setWidget(row, 1, htmlPanel);
+				getChatInfoFt.getFlexCellFormatter().setWidth(row, 1, "600px");
 				getChatInfoFt.setText(row, 2, chat.getMsgDate());
+				
 				getChatInfoFt.getCellFormatter().addStyleName(row, 2,   "timeStampColumn");
-				//getChatInfoFt.getFlexCellFormatter().setWidth(row, 2, "200px");
 			} catch (Exception e) {
 				System.out.println("The out put are " + e);
 				continue;
@@ -298,6 +284,8 @@ public class Chat implements EntryPoint {
 		if(addUserPanel.isVisible() == false) {
 			chatText.setFocus(true);
 		}
+		
+		Window.scrollTo (Window.getClientWidth() ,Window.getClientWidth());
 	}
 	
 	public String validTxt(String str) {
@@ -315,7 +303,6 @@ public class Chat implements EntryPoint {
 	}
 	
 	private void sendChat() {
-		
 		chatText.setCharacterWidth(50);
 		chatText.setVisibleLines(5);
 		inputPanel.add(setInfoFt);
@@ -325,6 +312,15 @@ public class Chat implements EntryPoint {
 		setInfoFt.setWidget(0, 0, new HTML("<div align=\"center\"><b>Enter Chat Message Here :</b></div>"));
 		setInfoFt.setWidget(0, 1, chatText);
 		setInfoFt.setWidget(0, 3, sendButton);
+		setInfoFt.setWidget(1, 1, insertSmiley);
+		insertSmiley.addClickHandler(new ClickHandler() {
+	         @Override
+	         public void onClick(ClickEvent event) {
+	        	 smileyPanel.setVisible(true);
+	        	 Window.scrollTo (Window.getClientWidth() ,Window.getClientWidth());
+	         }
+	      });
+		
 	
 		class MyHandler implements ClickHandler, KeyUpHandler {
 			public void onClick(ClickEvent event) {
@@ -358,17 +354,18 @@ public class Chat implements EntryPoint {
 
 	private void sendChatInformation() {
 		image.setVisible(true);
-		String chatInfo = chatText.getText();
+		String chatInfo = chatText.getText().trim();
+		boolean notEmpty = chatInfo.length() > 0;
 		
 		chatInfo = chatInfo.replaceAll(":D", "<img  class=\"laugh\"></img>");
-		chatInfo = chatInfo.replaceAll("\\(blub\\)", "<img  class=\"blub\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(bulb\\)", "<img  class=\"bulb\"></img>");
 		chatInfo = chatInfo.replaceAll("\\(fever\\)", "<img  class=\"fever\"></img>");
 		chatInfo = chatInfo.replaceAll("\\(music\\)", "<img  class=\"music\"></img>");
 		chatInfo = chatInfo.replaceAll("\\(question\\)", "<img  class=\"question\"></img>");
 		
 		chatInfo = chatInfo.replaceAll("\\(exclamator\\)", "<img  class=\"exclamator\"></img>");
-		chatInfo = chatInfo.replaceAll("\\(coin\\)", "<img  class=\"coin\"></img>");
-		chatInfo = chatInfo.replaceAll("\\(thumsup\\)", "<img  class=\"thumsup\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(thumbsdown\\)", "<img  class=\"thumbsdown\"></img>");
+		chatInfo = chatInfo.replaceAll("\\(thumbsup\\)", "<img  class=\"thumbsup\"></img>");
 		chatInfo = chatInfo.replaceAll("\\(call\\)", "<img  class=\"call\"></img>");
 		chatInfo = chatInfo.replaceAll("\\(rofl\\)", "<img  class=\"rofl\"></img>");
 		
@@ -416,7 +413,7 @@ public class Chat implements EntryPoint {
 		chatInfo = chatInfo.replaceAll("\\(gloom\\)", "<img  class=\"gloom\"></img>");
 		
 		chatInfo = "<div  class=\"img\">" + chatInfo + "</div>";
-		if (chatInfo.length()  > 0 ) {
+		if (notEmpty) {
 		chatService.sentInfoToServer(chatInfo, userName,
 				new AsyncCallback<String>() {
 					public void onFailure(Throwable caught) {
