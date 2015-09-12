@@ -122,6 +122,7 @@ h1 {
 
 .blub {
 	background: url("/images/smileys.jpg") -120px -10px;
+
 	background-repeat:  no-repeat;
 	width: 55px;
     height: 55px;
@@ -156,6 +157,7 @@ h1 {
 }
 .coin {
 	background: url("/images/smileys.jpg") -125px -100px;
+
 	background-repeat:  no-repeat;
 	width: 55px;
     height: 55px;
