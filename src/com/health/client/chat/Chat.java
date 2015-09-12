@@ -136,7 +136,7 @@ public class Chat implements EntryPoint {
 		VerticalPanel infoPanel = new VerticalPanel();
 		
 		
-		infoPanel.add(new HTMLPanel("<b>This is chat to everyone, use chrome for better perfomance.</b> <br>  <h2>Smileys you can use are as follows :<h2>"));
+		infoPanel.add(new HTMLPanel("<b>This is chat to everyone, use Chrome for better perfomance.</b> <br>  <h2>Smileys you can use are as follows :<h2>"));
 		infoPanel.add(infoFlexTable);
 		infoFlexTable.addStyleName("infoStyle");
 		infoFlexTable.setWidget(0, 0, new HTMLPanel("<img  class=\"laugh\"></img>"));

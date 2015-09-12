@@ -112,259 +112,261 @@ h1 {
 	*/
 
 .laugh {
-	background: url("/images/smileys.jpg") 0px 0px;
-	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	background: url("/images/smileys.jpg") -25px -10px;
+    background-repeat: no-repeat;
+    
+    width: 55px;
+    height: 55px;
+
 }
 
 .blub {
-	background: url("/images/smileys.jpg") -100px 0px;
+	background: url("/images/smileys.jpg") -120px -10px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .fever {
-	background: url("/images/smileys.jpg") -200px 0px;
+	background: url("/images/smileys.jpg") -220px -10px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
-}
+	 width: 55px;
+    height: 55px;
+ }
 
 .music {
-	background: url("/images/smileys.jpg") -300px 0px;
+	background: url("/images/smileys.jpg") -320px -10px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .question {
-	background: url("/images/smileys.jpg") -400px 0px;
+	background: url("/images/smileys.jpg") -430px -10px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 	
 .exclamator {
-	background: url("/images/smileys.jpg") 0px -90px;
+	background: url("/images/smileys.jpg") -25px -100px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .coin {
-	background: url("/images/smileys.jpg") -100px -90px;
+	background: url("/images/smileys.jpg") -125px -100px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .thumsup {
-	background: url("/images/smileys.jpg") -200px -90px;
+	background: url("/images/smileys.jpg") -225px -100px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .call {
-	background: url("/images/smileys.jpg") -300px -90px;
+	background: url("/images/smileys.jpg") -325px -100px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .rofl {
-	background: url("/images/smileys.jpg") -400px -90px;
+	background: url("/images/smileys.jpg") -425px -100px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .cry {
-	background: url("/images/smileys.jpg") 0px -180px;
+	background: url("/images/smileys.jpg") -25px -190px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .oh {
-	background: url("/images/smileys.jpg") -100px -180px;
+	background: url("/images/smileys.jpg") -125px -190px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .ah {
-	background: url("/images/smileys.jpg") -200px -180px;
+	background: url("/images/smileys.jpg") -225px -190px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .ahh {
-	background: url("/images/smileys.jpg") -300px -180px;
+	background: url("/images/smileys.jpg") -325px -190px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .cool {
-	background: url("/images/smileys.jpg") -400px -180px;
+	background: url("/images/smileys.jpg") -425px -190px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .angry {
-	background: url("/images/smileys.jpg") 0px -275px;
+	background: url("/images/smileys.jpg") -25px -285px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .angry1 {
-	background: url("/images/smileys.jpg") -100px -275px;
+	background: url("/images/smileys.jpg") -125px -285px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .wink {
-	background: url("/images/smileys.jpg") -200px -275px;
+	background: url("/images/smileys.jpg") -225px -285px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .love {
-	background: url("/images/smileys.jpg") -300px -275px;
+	background: url("/images/smileys.jpg") -325px -285px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .crazy {
 	background: url("/images/smileys.jpg") -400px -275px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .smile {
 	background: url("/images/smileys.jpg") 0px -360px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .smile1 {
 	background: url("/images/smileys.jpg") -100px -360px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .ps {
 	background: url("/images/smileys.jpg") -200px -360px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .sad {
 	background: url("/images/smileys.jpg") -300px -360px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .worry {
 	background: url("/images/smileys.jpg") -400px -360px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .mad {
 	background: url("/images/smileys.jpg") 0px -450px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .confused {
 	background: url("/images/smileys.jpg") -100px -450px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .smirk {
 	background: url("/images/smileys.jpg") -200px -450px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .kiss {
 	background: url("/images/smileys.jpg") -300px -450px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .shut {
 	background: url("/images/smileys.jpg") -400px -450px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 
 .party {
 	background: url("/images/smileys.jpg") 0px -540px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .cat {
 	background: url("/images/smileys.jpg") -100px -540px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .nerd {
 	background: url("/images/smileys.jpg") -200px -540px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .devil {
 	background: url("/images/smileys.jpg") -300px -540px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .angel {
 	background: url("/images/smileys.jpg") -400px -540px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 
 .kissed {
 	background: url("/images/smileys.jpg") 0px -630px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .money {
 	background: url("/images/smileys.jpg") -100px -630px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .tense {
 	background: url("/images/smileys.jpg") -200px -630px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .cap {
 	background: url("/images/smileys.jpg") -300px -630px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .gloom {
 	background: url("/images/smileys.jpg") -400px -630px;
 	background-repeat:  no-repeat;
-	width:  25px;
-	padding: 35px;
+	width: 55px;
+    height: 55px;
 }
 .img {
 	vertical-align: middle;
