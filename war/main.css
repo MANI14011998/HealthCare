@@ -1,383 +1,370 @@
-	/** Add css rules here for your application. */
-
-
-/** Example rules used by the template application (remove for your app) */
-h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: #777777;
-  margin: 40px 0px 70px;
-  text-align: center;
-}
-
-.sendButton {
-  display: block;
-  font-size: 16pt;
-}
-
-/** Most GWT widgets already have a style name defined */
-.gwt-DialogBox {
-  width: 400px;
-}
-
-.dialogVPanel {
-  margin: 5px;
-}
-
-.serverResponseLabelError {
-  color: red;
-}
-
-/** Set ids using widget.getElement().setId("idOfElement") */
-#closeButton {
-  margin: 15px 6px 6px;
-}
-
-.infoStyle {
-	text-align: center;
-	font-weight: bold;
+		/** Add css rules here for your application. */
 	
-}
-.FlexTable {
-  table-layout: fixed;
-  border-top: thin solid #444444;
-  border-left: thin solid #444444;
-  border-right: thin solid #111111;
-  border-bottom: thin solid #111111;
-  background-color:  #505050;
-}
-
-.FlexTable-OddRow {
-  background-color: #FFFFFF;
-}
-
-.FlexTable-Header {
-  font-weight: bold; 
-  padding: 10px;
-  border-width: 10px 10px 10px 10px;
-  border-style: solid;
-  border-color: white;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background-color:  #111111;
-   color: white;
-  
-}
-.FlexTable-EvenRow {
-  background-color:  #FFFF99;
-  color: black;
-}
-
-.FlexTable-ColumnLabel {
-  color: white;
-  padding: 3px;
-}
-
-.FlexTable-ColumnLabelCell {
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-color: white;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-.FlexTable-Cell {
-  border-width: 0px 0px 0px 1px;
-  border-style: solid;
-  border-color: white;
-  padding: 5px;
-}
-
-.userNameColumn {
-	 font-weight: bold;
-	 width: 200px;
-}
-.timeStampColumn {
-	 font-weight: bold;
-	  width: 250px;
-}
-
-/*	
-	0px -180px crying 
-	0px -360px smile
-	0px 0px laugh
-	-300px -275px love	
-	(x and y)
-	-100px 0px blub
-	-200px 0px fever
-	-300	px 0px music
-	-400px 0px question mark 
-	*/
-
-.laugh {
-	background: url("/images/smileys.jpg") -25px -10px;
-    background-repeat: no-repeat;
-    
-    width: 55px;
-    height: 55px;
-
-}
-
-.blub {
-	background: url("/images/smileys.jpg") -120px -10px;
-
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.fever {
-	background: url("/images/smileys.jpg") -220px -10px;
-	background-repeat:  no-repeat;
-	 width: 55px;
-    height: 55px;
- }
-
-.music {
-	background: url("/images/smileys.jpg") -320px -10px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.question {
-	background: url("/images/smileys.jpg") -430px -10px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
 	
-.exclamator {
-	background: url("/images/smileys.jpg") -25px -100px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.coin {
-	background: url("/images/smileys.jpg") -125px -100px;
-
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.thumsup {
-	background: url("/images/smileys.jpg") -225px -100px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.call {
-	background: url("/images/smileys.jpg") -325px -100px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.rofl {
-	background: url("/images/smileys.jpg") -425px -100px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.cry {
-	background: url("/images/smileys.jpg") -25px -190px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.oh {
-	background: url("/images/smileys.jpg") -125px -190px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.ah {
-	background: url("/images/smileys.jpg") -225px -190px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.ahh {
-	background: url("/images/smileys.jpg") -325px -190px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.cool {
-	background: url("/images/smileys.jpg") -425px -190px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.angry {
-	background: url("/images/smileys.jpg") -25px -285px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.angry1 {
-	background: url("/images/smileys.jpg") -125px -285px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.wink {
-	background: url("/images/smileys.jpg") -225px -285px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.love {
-	background: url("/images/smileys.jpg") -325px -285px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.crazy {
-	background: url("/images/smileys.jpg") -400px -275px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.smile {
-	background: url("/images/smileys.jpg") 0px -360px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.smile1 {
-	background: url("/images/smileys.jpg") -100px -360px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.ps {
-	background: url("/images/smileys.jpg") -200px -360px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.sad {
-	background: url("/images/smileys.jpg") -300px -360px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.worry {
-	background: url("/images/smileys.jpg") -400px -360px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.mad {
-	background: url("/images/smileys.jpg") 0px -450px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.confused {
-	background: url("/images/smileys.jpg") -100px -450px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.smirk {
-	background: url("/images/smileys.jpg") -200px -450px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.kiss {
-	background: url("/images/smileys.jpg") -300px -450px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.shut {
-	background: url("/images/smileys.jpg") -400px -450px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-
-.party {
-	background: url("/images/smileys.jpg") 0px -540px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.cat {
-	background: url("/images/smileys.jpg") -100px -540px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.nerd {
-	background: url("/images/smileys.jpg") -200px -540px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.devil {
-	background: url("/images/smileys.jpg") -300px -540px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.angel {
-	background: url("/images/smileys.jpg") -400px -540px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-
-.kissed {
-	background: url("/images/smileys.jpg") 0px -630px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.money {
-	background: url("/images/smileys.jpg") -100px -630px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.tense {
-	background: url("/images/smileys.jpg") -200px -630px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.cap {
-	background: url("/images/smileys.jpg") -300px -630px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.gloom {
-	background: url("/images/smileys.jpg") -400px -630px;
-	background-repeat:  no-repeat;
-	width: 55px;
-    height: 55px;
-}
-.img {
-	vertical-align: middle;
-	font-size:200%;
-}
-div.desc
-{
-  text-align: center;
-  font-weight: normal;
-  width: 120px;
-  margin: 2px;
-}
+	/** Example rules used by the template application (remove for your app) */
+	h1 {
+	  font-size: 2em;
+	  font-weight: bold;
+	  color: #777777;
+	  margin: 40px 0px 70px;
+	  text-align: center;
+	}
+	
+	.sendButton {
+	  display: block;
+	  font-size: 16pt;
+	}
+	
+	/** Most GWT widgets already have a style name defined */
+	.gwt-DialogBox {
+	  width: 400px;
+	}
+	
+	.dialogVPanel {
+	  margin: 5px;
+	}
+	
+	.serverResponseLabelError {
+	  color: red;
+	}
+	
+	/** Set ids using widget.getElement().setId("idOfElement") */
+	#closeButton {
+	  margin: 15px 6px 6px;
+	}
+	
+	.infoStyle {
+		text-align: center;
+		font-weight: bold;
+		
+	}
+	.FlexTable {
+	  table-layout: fixed;
+	  border-top: thin solid #444444;
+	  border-left: thin solid #444444;
+	  border-right: thin solid #111111;
+	  border-bottom: thin solid #111111;
+	  background-color:  #505050;
+	}
+	
+	.FlexTable-OddRow {
+	  background-color: #FFFFFF;
+	}
+	
+	.FlexTable-Header {
+	  font-weight: bold; 
+	  padding: 10px;
+	  border-width: 10px 10px 10px 10px;
+	  border-style: solid;
+	  border-color: white;
+	  margin: 0;
+	  padding: 0;
+	  text-align: center;
+	  background-color:  #111111;
+	   color: white;
+	  
+	}
+	.FlexTable-EvenRow {
+	  background-color:  #FFFF99;
+	  color: black;
+	}
+	
+	.FlexTable-ColumnLabel {
+	  color: white;
+	  padding: 3px;
+	}
+	
+	.FlexTable-ColumnLabelCell {
+	  border-width: 0 0 1px 0;
+	  border-style: solid;
+	  border-color: white;
+	  margin: 0;
+	  padding: 0;
+	  text-align: center;
+	}
+	
+	.FlexTable-Cell {
+	  border-width: 0px 0px 0px 1px;
+	  border-style: solid;
+	  border-color: white;
+	  padding: 5px;
+	}
+	
+	.userNameColumn {
+		 font-weight: bold;
+		 width: 200px;
+	}
+	.timeStampColumn {
+		 font-weight: bold;
+		  width: 250px;
+	}
+	
+	/*	
+		X cooridnate is -25 -122 -218 -315 -412
+		y  cooridnate is -10 100 190  280  370 455 545 635 
+		*/
+	
+	.laugh {
+		background: url("/images/smileys.jpg") -25px -10px;
+		width: 55px;
+		height: 55px;
+		display: block; 
+	}
+	
+	.bulb {
+		background: url("/images/smileys.jpg") -122px -10px;
+		width: 55px;
+		height: 55px;
+		display: block;
+	}
+	
+	.fever {
+		background: url("/images/smileys.jpg") -218px -10px;
+		 width: 55px;
+	    height: 55px;
+	    display: block;
+	 }
+	
+	.music {
+		background: url("/images/smileys.jpg") -315px -10px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.question {
+		background: url("/images/smileys.jpg") -412px -10px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+		
+	.exclamator {
+		background: url("/images/smileys.jpg") -25px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.thumbsdown {
+		background: url("/images/smileys.jpg") -122px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.thumbsup {
+		background: url("/images/smileys.jpg") -218px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.call {
+		background: url("/images/smileys.jpg") -315px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.rofl {
+		background: url("/images/smileys.jpg") -412px -100px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.cry {
+		background: url("/images/smileys.jpg") -25px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.oh {
+		background: url("/images/smileys.jpg") -122px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.ah {
+		background: url("/images/smileys.jpg") -218px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.ahh {
+		background: url("/images/smileys.jpg") -315px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.cool {
+		background: url("/images/smileys.jpg") -412px -190px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.angry {
+		background: url("/images/smileys.jpg") -25px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.angry1 {
+		background: url("/images/smileys.jpg") -122px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.wink {
+		background: url("/images/smileys.jpg") -218px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.love {
+		background: url("/images/smileys.jpg") -315px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.crazy {
+		background: url("/images/smileys.jpg") -412px -280px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.smile {
+		background: url("/images/smileys.jpg") -25px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.smile1 {
+		background: url("/images/smileys.jpg") -122px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.ps {
+		background: url("/images/smileys.jpg") -218px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.sad {
+		background: url("/images/smileys.jpg") -315px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.worry {
+		background: url("/images/smileys.jpg") -412px -370px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.mad {
+		background: url("/images/smileys.jpg") -25px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.confused {
+		background: url("/images/smileys.jpg") -122px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.smirk {
+		background: url("/images/smileys.jpg") -218px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.kiss {
+		background: url("/images/smileys.jpg") -315px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.shut {
+		background: url("/images/smileys.jpg") -412px -455px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.party {
+		background: url("/images/smileys.jpg") -25px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.cat {
+		background: url("/images/smileys.jpg") -122px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.nerd {
+		background: url("/images/smileys.jpg") -218px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.devil {
+		background: url("/images/smileys.jpg") -315px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.angel {
+		background: url("/images/smileys.jpg") -412px -545px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	
+	.kissed {
+		background: url("/images/smileys.jpg") -25px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.money {
+		background: url("/images/smileys.jpg") -122px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.tense {
+		background: url("/images/smileys.jpg") -218px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.cap {
+		background: url("/images/smileys.jpg") -315px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.gloom {
+		background: url("/images/smileys.jpg") -412px -635px;
+		width: 55px;
+	    height: 55px;
+	    display: block;
+	}
+	.img {
+		vertical-align: middle;
+		font-size:200%;
+	}
+	div.desc
+	{
+	  text-align: center;
+	  font-weight: normal;
+	  width: 120px;
+	  margin: 2px;
+	}

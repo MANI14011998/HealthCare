@@ -145,7 +145,7 @@ public class Chat implements EntryPoint {
 		RootPanel.get("main").add(loadImagePanel);
 		
 
-		VerticalPanel infoPanel = new VerticalPanel();
+		//VerticalPanel infoPanel = new VerticalPanel();
 		
 		
 		infoPanel.add(new HTMLPanel("<b>This is chat to everyone, use Chrome for better perfomance.</b> <br>  <h2>Smileys you can use are as follows :<h2>"));
